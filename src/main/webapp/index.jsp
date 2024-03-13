@@ -131,8 +131,8 @@
             </a>
             <div class="collapse" id="membership">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> 로그인 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> 회원가입 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/membership/login.jsp"> 로그인 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/membership/register.jsp"> 회원가입 </a></li>
               </ul>
             </div>
           </li>

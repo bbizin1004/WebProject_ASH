@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,19 +30,15 @@
           <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
             <div class="card col-lg-4 mx-auto">
               <div class="card-body px-5 py-5">
-                <h3 class="card-title text-left mb-3">Register</h3>
+                <h3 class="card-title text-left mb-3">Login</h3>
                 <form>
                   <div class="form-group">
-                    <label>Username</label>
+                    <label>Username or email *</label>
                     <input type="text" class="form-control p_input">
                   </div>
                   <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" class="form-control p_input">
-                  </div>
-                  <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" class="form-control p_input">
+                    <label>Password *</label>
+                    <input type="text" class="form-control p_input">
                   </div>
                   <div class="form-group d-flex align-items-center justify-content-between">
                     <div class="form-check">
@@ -50,13 +51,12 @@
                     <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
                   </div>
                   <div class="d-flex">
-                    <button class="btn btn-facebook col mr-2">
+                    <button class="btn btn-facebook mr-2 col">
                       <i class="mdi mdi-facebook"></i> Facebook </button>
                     <button class="btn btn-google col">
                       <i class="mdi mdi-google-plus"></i> Google plus </button>
                   </div>
-                  <p class="sign-up text-center">Already have an Account?<a href="#"> Sign Up</a></p>
-                  <p class="terms">By creating an account you are accepting our<a href="#"> Terms & Conditions</a></p>
+                  <p class="sign-up">Don't have an Account?<a href="#"> Sign Up</a></p>
                 </form>
               </div>
             </div>
