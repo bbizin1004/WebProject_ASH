@@ -12,7 +12,7 @@ public class MemberDAO extends DBConnPool {
 		int result = 0;
 		try {
 			String query = "INSERT INTO member ( "
-					+ " id, pass, name, tel, email) "
+					+ " id, pass, name, tel, email, regidate) "
 					+ " VALUES ( "
 					+ " ?,?,?,?,?,sysdate)";
 			psmt = con.prepareStatement(query);
