@@ -28,7 +28,8 @@ public class register extends HttpServlet {
 		dto.setEmail(req.getParameter("email"));
 
 		MemberDAO dao = new MemberDAO();
-		
+		int result = dao.registerDTO(dto);
+		dao.close();
 		
 	}
 

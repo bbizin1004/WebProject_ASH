@@ -110,11 +110,14 @@
             <div class="collapse" id="borad">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                 	<a class="nav-link" href="pages/ui-features/buttons.html">자유게시판</a></li>
+                 	<a class="nav-link" 
+                 		href="pages/ui-features/buttons.html">자유게시판</a></li>
                 <li class="nav-item">
-                 	<a class="nav-link" href="pages/ui-features/dropdowns.html">Q&A 게시판</a></li>
+                 	<a class="nav-link" 
+                 		href="pages/ui-features/dropdowns.html">Q&A 게시판</a></li>
                 <li class="nav-item"> 
-                	<a class="nav-link" href="pages/ui-features/typography.html">자료실 게시판</a></li>
+                	<a class="nav-link" 
+                		href="pages/ui-features/typography.html">자료실 게시판</a></li>
               </ul>
             </div>
           </li>
@@ -122,7 +125,8 @@
           
            <!-- 회원관리 -->
           <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#membership" aria-expanded="false" aria-controls="membership">
+            <a class="nav-link" data-toggle="collapse" href="#membership"
+            	 aria-expanded="false" aria-controls="membership">
               <span class="menu-icon">
                 <i class="mdi mdi-security"></i>
               </span>
@@ -131,8 +135,10 @@
             </a>
             <div class="collapse" id="membership">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/member/login.jsp"> 로그인 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/member/register.jsp"> 회원가입 </a></li>
+                <li class="nav-item"> <a class="nav-link" 
+                	href="pages/member/login.jsp"> 로그인 </a></li>
+                <li class="nav-item"> <a class="nav-link" 
+                	href="pages/member/register.jsp"> 회원가입 </a></li>
               </ul>
             </div>
           </li>
