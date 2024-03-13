@@ -5,6 +5,10 @@ import jakarta.servlet.ServletContext;
 
 public class MemberDAO extends JDBConnect {
 	
+	public MemberDAO() {
+		super();
+	}
+	
     public MemberDAO(String drv, String url, String id, String pw) {
         super(drv, url, id, pw);
     }
@@ -22,12 +26,16 @@ public class MemberDAO extends JDBConnect {
             psmt = con.prepareStatement(query);
             psmt.setString(1, uid);     
             psmt.setString(2, upass);
+            
             rs = psmt.executeQuery();  
+            
             if (rs.next()) {
                 dto.setId(rs.getString("id"));
                 dto.setPass(rs.getString("pass"));
                 dto.setName(rs.getString(3));
-                dto.setRegidate(rs.getString(4));
+                dto.setTel(rs.getString(4));
+                dto.setEmail(rs.getString(5));
+                dto.setRegidate(rs.getDate(6));
             }
         }
         catch (Exception e) {
