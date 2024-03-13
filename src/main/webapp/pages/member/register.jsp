@@ -1,15 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>회원 가입</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -30,33 +28,48 @@
           <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
             <div class="card col-lg-4 mx-auto">
               <div class="card-body px-5 py-5">
-                <h3 class="card-title text-left mb-3">Login</h3>
-                <form>
+                <h3 class="card-title text-left mb-3">회원가입</h3>
+                <!-- 회원가입 폼 -->
+                <form method="post" action="register.do">
                   <div class="form-group">
-                    <label>Username or email *</label>
+                    <label>아이디</label>
+                    <input type="text"  name="id" class="form-control p_input">
+                  </div>
+                  <div class="form-group">
+                    <label>비밀번호</label>
+                    <input type="password" class="form-control p_input">
+                  </div>
+                  <div class="form-group">
+                    <label>이름</label>
                     <input type="text" class="form-control p_input">
                   </div>
                   <div class="form-group">
-                    <label>Password *</label>
-                    <input type="text" class="form-control p_input">
+                    <label>Tel</label>
+                    <input type="tel" class="form-control p_input">
+                  </div>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control p_input">
                   </div>
                   <div class="form-group d-flex align-items-center justify-content-between">
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input"> Remember me </label>
+                        <input type="checkbox" class="form-check-input"> 로그인 상태 유지 </label>
                     </div>
-                    <a href="#" class="forgot-pass">Forgot password</a>
+                    <a href="#" class="forgot-pass">비밀번호 찾기</a>
                   </div>
                   <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
+                    <button type="submit" 
+                    	class="btn btn-primary btn-block enter-btn">회원 가입하기</button>
                   </div>
                   <div class="d-flex">
-                    <button class="btn btn-facebook mr-2 col">
+                    <button class="btn btn-facebook col mr-2">
                       <i class="mdi mdi-facebook"></i> Facebook </button>
                     <button class="btn btn-google col">
                       <i class="mdi mdi-google-plus"></i> Google plus </button>
                   </div>
-                  <p class="sign-up">Don't have an Account?<a href="#"> Sign Up</a></p>
+                  <p class="sign-up text-center">아직 회원이 아니십니까? 그럼 지금 당장 가입하세요! <a href="#">  회원 가입</a></p>
+                  <p class="terms">회원가입은 약관에 동의함을 의미합니다. <a href="#"> Terms & Conditions</a></p>
                 </form>
               </div>
             </div>
