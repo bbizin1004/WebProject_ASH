@@ -80,11 +80,11 @@
 								</div>
 								<div class="form-group">
 									<label>Tel</label> <input type="tel"
-										name="phone" class="form-control p_input">
+										name="tel" class="form-control p_input">
 								</div>
 								<div class="form-group">
 									<label>Email</label> <input type="email"
-										name="mail" class="form-control p_input">
+										name="email" class="form-control p_input">
 								</div>
 								<div
 									class="form-group d-flex align-items-center justify-content-between">

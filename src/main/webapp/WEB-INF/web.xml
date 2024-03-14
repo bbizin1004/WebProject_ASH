@@ -39,6 +39,27 @@
 		<servlet-name>register</servlet-name>
 		<url-pattern>/pages/member/register.do</url-pattern>
 	</servlet-mapping>
+	
+	
+		<!-- 로그인  -->
+	<servlet>
+		<servlet-name>login</servlet-name>
+		<servlet-class>servlet.login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>login</servlet-name>
+		<url-pattern>/pages/member/login.do</url-pattern>
+	</servlet-mapping>
+
+		<!-- 로그아웃  -->
+	<servlet>
+		<servlet-name>logout</servlet-name>
+		<servlet-class>servlet.logout</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>logout</servlet-name>
+		<url-pattern>/logout.do</url-pattern>
+	</servlet-mapping>
 
 
 
@@ -85,6 +106,7 @@
     <servlet-name>MVCBoardList</servlet-name>
     <url-pattern>/mvcboard/list.do</url-pattern>
   </servlet-mapping>
+  
   <!-- 글 작성하기 -->
   <servlet>
     <servlet-name>MVCBoardWrite</servlet-name>

@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import membership.MemberDAO;
 import membership.MemberDTO;
+import utils.JSFunction;
 
 public class register extends HttpServlet {
 
@@ -30,6 +31,16 @@ public class register extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 		int result = dao.registerDTO(dto);
 		dao.close();
+		
+        if (result == 1) {  
+        	
+           resp.sendRedirect("./login.do");
+        }
+        else {  
+        	// 가입 실패시 회원가입 페이지로 이동 
+        	 JSFunction.alertLocation(resp, "회원가입에 실패했습니다.",
+                     "/pages/member/register.do");
+        }
 		
 	}
 

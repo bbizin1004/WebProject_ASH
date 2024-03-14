@@ -22,6 +22,22 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    
+    <script type="text/javascript">
+	function validateForm(form) { 
+		if (form.id.value == "") {
+			alert("아이디를 입력하세요.");
+			form.id.focus();
+			return false;
+		}
+		if (form.pass.value == "") {
+			alert("비밀번호를 입력하세요.");
+			form.pass.focus();
+			return false;
+		}
+	}
+</script>
+    
   </head>
   <body>
     <div class="container-scroller">
@@ -31,14 +47,16 @@
             <div class="card col-lg-4 mx-auto">
               <div class="card-body px-5 py-5">
                 <h3 class="card-title text-left mb-3">로그인</h3>
-                <form>
+                <!-- 로그인 처리 시작 -->
+                <form method="post" action="login.do"
+					  onsubmit="return validateForm(this);">
                   <div class="form-group">
                     <label>ID *</label>
-                    <input type="text" class="form-control p_input">
+                    <input type="text" name="id" class="form-control p_input">
                   </div>
                   <div class="form-group">
                     <label>비밀번호 *</label>
-                    <input type="text" class="form-control p_input">
+                    <input type="password" name="pass" class="form-control p_input">
                   </div>
                   <div class="form-group d-flex align-items-center justify-content-between">
                     <div class="form-check">
