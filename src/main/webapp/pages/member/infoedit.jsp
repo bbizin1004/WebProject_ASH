@@ -1,27 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+    <!-- 이걸 mvc 패턴으로 하려면 서블릿으로 작성한걸 여기서 어떻게 쓰는지? -->
+<%@ include file="./IsLoggedIn.jsp" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>회원 가입</title>
-<!-- plugins:css -->
+<title>회원 정보 수정</title>
 <link rel="stylesheet"
 	href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
 <link rel="stylesheet"
 	href="../../assets/vendors/css/vendor.bundle.base.css">
-<!-- endinject -->
-<!-- Plugin css for this page -->
-<!-- End plugin css for this page -->
-<!-- inject:css -->
-<!-- endinject -->
-<!-- Layout styles -->
 <link rel="stylesheet" href="../../assets/css/style.css">
-<!-- End layout styles -->
 <link rel="shortcut icon" href="../../assets/images/favicon.png" />
 
 <script type="text/javascript">
