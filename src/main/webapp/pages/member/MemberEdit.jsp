@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <!-- 이걸 mvc 패턴으로 하려면 서블릿으로 작성한걸 여기서 어떻게 쓰는지? -->
+    <!-- mvc 패턴은  이걸 함수로 만들어 두고 각 서블릿으로
+    	 이동시 이 함수를 거기에 끼워놓으면 된다.  -->
 <%@ include file="./IsLoggedIn.jsp" %>
 
 <!DOCTYPE html>
@@ -57,55 +58,33 @@
 						<div class="card-body px-5 py-5">
 							<h3 class="card-title text-left mb-3">회원가입</h3>
 							<!-- 회원가입 폼 -->
-							<form method="post" action="register.do"
+							<form method="post" action="MemberEdit.do"
 									onsubmit="return validateForm(this);">
 								<div class="form-group">
-									<label>아이디</label> <input type="text" name="id"
-										class="form-control p_input">
+									<label>아이디</label> 
+									<p>${ dto.id }</p>
 								</div>
 								<div class="form-group">
 									<label>비밀번호</label> <input type="password"
-										name="pass" class="form-control p_input">
+										name="pass" value="${ dto.pass }" class="form-control p_input">
 								</div>
 								<div class="form-group">
 									<label>이름</label> <input type="text"
-										name="name" class="form-control p_input">
+										name="name" value="${ dto.name }" class="form-control p_input">
 								</div>
 								<div class="form-group">
 									<label>Tel</label> <input type="tel"
-										name="tel" class="form-control p_input">
+										name="tel" value="${ dto.tel }" class="form-control p_input">
 								</div>
 								<div class="form-group">
 									<label>Email</label> <input type="email"
-										name="email" class="form-control p_input">
+										name="email" value="${ dto.email }" class="form-control p_input">
 								</div>
-								<div
-									class="form-group d-flex align-items-center justify-content-between">
-									<div class="form-check">
-										<label class="form-check-label"> <input
-											type="checkbox" class="form-check-input"> 로그인 상태 유지
-										</label>
-									</div>
-									<a href="#" class="forgot-pass">비밀번호 찾기</a>
-								</div>
+
 								<div class="text-center">
 									<button type="submit"
-										class="btn btn-primary btn-block enter-btn">회원 가입하기</button>
+										class="btn btn-primary btn-block enter-btn">수정하기</button>
 								</div>
-								<div class="d-flex">
-									<button class="btn btn-facebook col mr-2">
-										<i class="mdi mdi-facebook"></i> Facebook
-									</button>
-									<button class="btn btn-google col">
-										<i class="mdi mdi-google-plus"></i> Google plus
-									</button>
-								</div>
-								<p class="sign-up text-center">
-									아직 회원이 아니십니까? 그럼 지금 당장 가입하세요! <a href="#"> 회원 가입</a>
-								</p>
-								<p class="terms">
-									회원가입은 약관에 동의함을 의미합니다. <a href="#"> Terms & Conditions</a>
-								</p>
 							</form>
 						</div>
 					</div>

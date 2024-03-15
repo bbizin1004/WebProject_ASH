@@ -22,7 +22,8 @@ public class login extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		
+		
 		String id = req.getParameter("id");
 		String pass = req.getParameter("pass");
 
@@ -36,11 +37,12 @@ public class login extends HttpServlet {
 		if (memberDTO.getId() != null) {
 			session.setAttribute("id", memberDTO.getId());
 			session.setAttribute("pass", memberDTO.getPass());
-			resp.sendRedirect("../../index.jsp");
+			resp.sendRedirect("../../index.do");
+			
 		} else {
-			// 가입 실패시 로그인 페이지로 이동 
+			// 로그인 실패시 로그인 페이지로 이동 
        	 JSFunction.alertLocation(resp, "로그인에 실패했습니다.",
-                    "/pages/member/login.do");
+                    "./login.do");
 			
 		}
 

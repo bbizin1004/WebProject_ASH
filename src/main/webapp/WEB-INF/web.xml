@@ -1,92 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="https://jakarta.ee/xml/ns/jakartaee"
-	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
-	id="WebApp_ID" version="6.0">
-	<display-name>WebProject_ASH</display-name>
-
-	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-	</welcome-file-list>
-
-
-	<!-- 오라클 JDBC를 위한 드라이버 및 연결 정보 -->
-	<context-param>
-		<param-name>OracleDriver</param-name>
-		<param-value>oracle.jdbc.OracleDriver</param-value>
-	</context-param>
-	<context-param>
-		<param-name>OracleURL</param-name>
-		<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
-	</context-param>
-	<context-param>
-		<param-name>OracleId</param-name>
-		<param-value>Mas</param-value>
-	</context-param>
-	<context-param>
-		<param-name>OraclePwd</param-name>
-		<param-value>1234</param-value>
-	</context-param>
-
-
-	<!-- 회원가입  -->
-	<servlet>
-		<servlet-name>register</servlet-name>
-		<servlet-class>servlet.register</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>register</servlet-name>
-		<url-pattern>/pages/member/register.do</url-pattern>
-	</servlet-mapping>
-	
-	
-		<!-- 로그인  -->
-	<servlet>
-		<servlet-name>login</servlet-name>
-		<servlet-class>servlet.login</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>login</servlet-name>
-		<url-pattern>/pages/member/login.do</url-pattern>
-	</servlet-mapping>
-
-		<!-- 로그아웃  -->
-	<servlet>
-		<servlet-name>logout</servlet-name>
-		<servlet-class>servlet.logout</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>logout</servlet-name>
-		<!-- 주소창에 나오는 주소를  url패턴으로 주소가 
-			바뀌게 하는 임의로 정의하는 요청명주소.
-			주의사항: /로 시작하는 주소여야 한다.  -->
-		<url-pattern>/logout.do</url-pattern>
-	</servlet-mapping>
-
-
-
-	<!-- 게시판의 페이징 기능 추가 
-	 POSTS_PER_PAGE : 한 페이지에 출력할 게시물의 갯수를 설정
-	 PAGES_PER_BLOCK : 한 블럭당 출력할 페이지번호의 갯수를 설정 -->
-	<context-param>
-		<param-name>POSTS_PER_PAGE</param-name>
-		<param-value>10</param-value>
-	</context-param>
-	<context-param>
-		<param-name>PAGES_PER_BLOCK</param-name>
-		<param-value>5</param-value>
-	</context-param>
-
-
-
-
-<!-- MVC 패턴으로 간단한 회원인증 구현  -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>WebProject_ASH</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>OracleDriver</param-name>
+    <param-value>oracle.jdbc.OracleDriver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>OracleURL</param-name>
+    <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  <context-param>
+    <param-name>OracleId</param-name>
+    <param-value>Mas</param-value>
+  </context-param>
+  <context-param>
+    <param-name>OraclePwd</param-name>
+    <param-value>1234</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>register</servlet-name>
+    <servlet-class>servlet.register</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>register</servlet-name>
+    <url-pattern>/pages/member/register.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>login</servlet-name>
+    <servlet-class>servlet.login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>login</servlet-name>
+    <url-pattern>/pages/member/login.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>servlet.logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logout</servlet-name>
+    <url-pattern>/logout.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MemberEdit</servlet-name>
+    <servlet-class>servlet.MemberEdit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberEdit</servlet-name>
+    <url-pattern>/pages/member/MemberEdit.do</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>POSTS_PER_PAGE</param-name>
+    <param-value>10</param-value>
+  </context-param>
+  <context-param>
+    <param-name>PAGES_PER_BLOCK</param-name>
+    <param-value>5</param-value>
+  </context-param>
   <servlet>
     <servlet-name>MemberAuth</servlet-name>
     <servlet-class>servlet.MemberAuth</servlet-class>
-    <!-- 해당 서블릿에서만 사용할 수 있는 초기화 파라미터. 만약 웹애플리케이션
-    전체에서 사용해야 한다면 <context-param>으로 등록해야한다.  -->
     <init-param>
       <param-name>admin_id</param-name>
       <param-value>Mas</param-value>
@@ -96,11 +73,6 @@
     <servlet-name>MemberAuth</servlet-name>
     <url-pattern>/12Servlet/MemberAuth.mvc</url-pattern>
   </servlet-mapping>
-
-
-
-  <!-- 서블릿을 이용한 MVC패턴 게시판 매핑  -->
-  <!-- 리스트 -->	
   <servlet>
     <servlet-name>MVCBoardList</servlet-name>
     <servlet-class>model2.mvcboard.ListController</servlet-class>
@@ -109,8 +81,6 @@
     <servlet-name>MVCBoardList</servlet-name>
     <url-pattern>/mvcboard/list.do</url-pattern>
   </servlet-mapping>
-  
-  <!-- 글 작성하기 -->
   <servlet>
     <servlet-name>MVCBoardWrite</servlet-name>
     <servlet-class>model2.mvcboard.WriteController</servlet-class>
@@ -123,8 +93,14 @@
     <servlet-name>MVCBoardWrite</servlet-name>
     <url-pattern>/mvcboard/write.do</url-pattern>
   </servlet-mapping>
-
-
-
-
+  <servlet>
+    <description></description>
+    <display-name>Index</display-name>
+    <servlet-name>Index</servlet-name>
+    <servlet-class>servlet.Index</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Index</servlet-name>
+    <url-pattern>/Index</url-pattern>
+  </servlet-mapping>
 </web-app>

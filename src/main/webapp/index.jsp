@@ -143,12 +143,12 @@
                 <li class="nav-item"> <a class="nav-link" 
                 	href="pages/member/register.do"> 회원가입 </a></li>
     			</c:if>
-    			<!-- 여기서는 로그아웃 버튼을 클릭하면  경로가 로그아웃 서블릿이 있는 패키지로 
-    					이동한것 인지? 아니면 현재 wabapp 바로 밑에 있는 건지?
+    			<!-- 여기서는 로그아웃 버튼을 클릭하면  경로가 로그아웃 서블릿이 있는
+    			 패키지로 이동한것 인지? 아니면 현재 wabapp 바로 밑에 있는 건지?
     					서블릿으로 실행후 경로 지정할때 감이 안잡힘-->
                <c:if test="${sessionScope.id ne null}">
                 <li class="nav-item"> <a class="nav-link" 
-                	href="pages/member/register.do"> 정보수정 </a></li>
+                	href="pages/member/MemberEdit.do"> 정보수정 </a></li>
                 <li class="nav-item"> <a class="nav-link" 
                 	href="./logout.do"> 로그아웃 </a></li>
                </c:if>

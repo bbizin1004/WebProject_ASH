@@ -8,6 +8,9 @@ public class MemberDAO extends DBConnPool {
 		super();
 	}
 
+	
+	
+	
 	public int registerDTO(MemberDTO dto) {
 		int result = 0;
 		try {
@@ -28,6 +31,28 @@ public class MemberDAO extends DBConnPool {
 			e.printStackTrace();
 		}
 
+		return result;
+	}
+	
+	public int updateDTO(MemberDTO dto) {
+		int result = 0;
+		try {
+			String query = "UPDATE member "
+					+ " SET pass=?, name=?, tel=?, email=? "
+	            	+ " WHERE id=? ";
+			
+			psmt = con.prepareStatement(query);
+            psmt.setString(1, dto.getPass());
+            psmt.setString(2, dto.getName());
+            psmt.setString(3, dto.getTel());
+            psmt.setString(4, dto.getEmail());
+            psmt.setString(5, dto.getId());
+            result = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("게시물 입력 중 예외 발생");
+			e.printStackTrace();
+		}
 		return result;
 	}
 
