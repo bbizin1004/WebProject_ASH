@@ -31,8 +31,8 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="index.jsp"><img src="assets/images/logo.svg" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="index.jsp"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="index.do"><img src="assets/images/logo.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="index.do"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <ul class="nav">
           <li class="nav-item profile">
@@ -88,7 +88,7 @@
             <span class="nav-link">메뉴</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="index.jsp">
+            <a class="nav-link" href="index.do">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -99,25 +99,25 @@
           <!-- 게시판  -->
           <li class="nav-item menu-items">
           <!-- 메뉴 토글되는 부분 href 부분과 토글되는 div에 id를 동일하게 맞추면 된다. -->
-            <a class="nav-link" data-toggle="collapse" href="#borad" aria-expanded="false"
-            	 aria-controls="borad">
+            <a class="nav-link" data-toggle="collapse" href="#board" aria-expanded="false"
+            	 aria-controls="board">
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
               <span class="menu-title">게시판</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="borad">
+            <div class="collapse" id="board">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
                  	<a class="nav-link" 
-                 		href="pages/ui-features/buttons.html">자유게시판</a></li>
+                 		href="pages/board/freeBoard.do">자유게시판</a></li>
                 <li class="nav-item">
                  	<a class="nav-link" 
-                 		href="pages/ui-features/dropdowns.html">Q&A 게시판</a></li>
+                 		href="pages/board/qnaBoard.do">Q&A 게시판</a></li>
                 <li class="nav-item"> 
                 	<a class="nav-link" 
-                		href="pages/ui-features/typography.html">자료실 게시판</a></li>
+                		href="pages/board/fileBoard.do">자료실 게시판</a></li>
               </ul>
             </div>
           </li>
