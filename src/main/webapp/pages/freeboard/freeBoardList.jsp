@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,135 +26,7 @@
   <body>
     <div class="container-scroller">
       <!-- 사이드바 네비-->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="index.do"><img src="../../assets/images/logo.svg" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="index.do"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
-        </div>
-        <ul class="nav">
-          <li class="nav-item profile">
-            <div class="profile-desc">
-              <div class="profile-pic">
-                <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="../../assets/images/faces/face15.jpg" alt="">
-                  <span class="count bg-success"></span>
-                </div>
-                <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">안성현</h5>
-                  <span>최고 관리자</span>
-                </div>
-              </div>
-              <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
-              <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-settings text-primary"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">계정 관리</p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-onepassword  text-info"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">비밀번호 변경</p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-calendar-today text-success"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">할일 목록</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item nav-category">
-            <span class="nav-link">메뉴</span>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.do">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">대쉬보드</span>
-            </a>
-          </li>
-          
-          <!-- 게시판  -->
-          <li class="nav-item menu-items">
-          <!-- 메뉴 토글되는 부분 href 부분과 토글되는 div에 id를 동일하게 맞추면 된다. -->
-            <a class="nav-link" data-toggle="collapse" href="#board" aria-expanded="false"
-            	 aria-controls="board">
-              <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
-              </span>
-              <span class="menu-title">게시판</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="board">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                 	<a class="nav-link" 
-                 		href="pages/board/freeBoard.do">자유게시판</a></li>
-                <li class="nav-item">
-                 	<a class="nav-link" 
-                 		href="pages/board/qnaBoard.do">Q&A 게시판</a></li>
-                <li class="nav-item"> 
-                	<a class="nav-link" 
-                		href="pages/board/fileBoard.do">자료실 게시판</a></li>
-              </ul>
-            </div>
-          </li>
-          
-          
-           <!-- 회원관리 -->
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#membership"
-            	 aria-expanded="false" aria-controls="membership">
-              <span class="menu-icon">
-                <i class="mdi mdi-security"></i>
-              </span>
-              <span class="menu-title">회원관리</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="membership">
-              <ul class="nav flex-column sub-menu">
-              
-              <!-- 로그인 하면 변화되는 부분 -->
-              <c:if test="${sessionScope.id eq null}">
-                <li class="nav-item"> <a class="nav-link" 
-                	href="pages/member/login.do"> 로그인 </a></li>
-                <li class="nav-item"> <a class="nav-link" 
-                	href="pages/member/register.do"> 회원가입 </a></li>
-    			</c:if>
-    			<!-- 여기서는 로그아웃 버튼을 클릭하면  경로가 로그아웃 서블릿이 있는
-    			 패키지로 이동한것 인지? 아니면 현재 wabapp 바로 밑에 있는 건지?
-    					서블릿으로 실행후 경로 지정할때 감이 안잡힘-->
-               <c:if test="${sessionScope.id ne null}">
-                <li class="nav-item"> <a class="nav-link" 
-                	href="pages/member/MemberEdit.do"> 정보수정 </a></li>
-                <li class="nav-item"> <a class="nav-link" 
-                	href="./logout.do"> 로그아웃 </a></li>
-               </c:if>
-                	
-              </ul>
-            </div>
-          </li>
-      </nav>
-      <!-- 사이드바 끝 -->
+		<%@ include file="/partials/sidebar.jsp" %>
       <div class="container-fluid page-body-wrapper">
         <!-- partial:../../partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
@@ -376,84 +250,56 @@
                           </tr>
                         </thead>
                         <tbody>
+                        <c:choose>
+						    <c:when test="${ empty boardLists }"> 
+								<!-- 게시물이 없을 때 --> 
+						        <tr>
+						            <td colspan="5" align="center">
+						                등록된 게시물이 없습니다^^*
+						            </td>
+						        </tr>
+						    </c:when> 
+						 <c:otherwise>  
+						  <c:forEach items="${ boardLists }" var="row" varStatus="loop">    
                           <tr>
-                            <td> 1 </td>
-                            <td> Herman Beck </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
+                            <td> ${ map.totalCount - (((map.pageNum-1) * map.pageSize) + loop.index)}
                             </td>
-                            <td> $ 77.99 </td>
-                            <td> May 15, 2015 </td>
+                            <td> <a href="../freeboard/view.do?num=${ row.num }">${ row.title }</a> </td>
+                            <td>${ row.content }</td>
+                            <td> ${ row.postdate } </td>
+                            <td> ${ row.visitcount } </td>
                           </tr>
-                          <tr>
-                            <td> 2 </td>
-                            <td> Messsy Adam </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $245.30 </td>
-                            <td> July 1, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> 3 </td>
-                            <td> John Richards </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $138.00 </td>
-                            <td> Apr 12, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> 4 </td>
-                            <td> Peter Meggik </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 77.99 </td>
-                            <td> May 15, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> 5 </td>
-                            <td> Edward </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 160.25 </td>
-                            <td> May 03, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> 6 </td>
-                            <td> John Doe </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 123.21 </td>
-                            <td> April 05, 2015 </td>
-                          </tr>
-                          <tr>
-                            <td> 7 </td>
-                            <td> Henry Tom </td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td> $ 150.00 </td>
-                            <td> June 16, 2015 </td>
-                          </tr>
+                           </c:forEach>  
+                          </c:otherwise>      
+                         </c:choose>
                         </tbody>
+                            <!-- 하단 메뉴(바로가기, 글쓰기) -->
+					    <table border="1" width="100%">
+					        <tr align="center">
+					            <td>
+					                ${ map.pagingImg }
+					            </td>
+					            <td width="100"><button type="button"
+					                onclick="location.href='../freeboard/write.do';">글쓰기</button></td>
+					        </tr>
+					    </table>
+                            <!-- 검색 폼 -->
+    					<form method="get">  
+    					<table border="1" width="90%">
+    					<tr>
+					        <td align="center">
+					        <div class="form-group">
+					            <select name="searchField">
+					                <option value="title">제목</option>
+					                <option value="content">내용</option>
+					            </select>
+					            <input type="text" name="searchWord" />
+					            <input type="submit" value="검색" />
+					         </div>
+					        </td>
+					    </tr>
+					    </table>
+					    </form>
                       </table>
                     </div>
                   </div>

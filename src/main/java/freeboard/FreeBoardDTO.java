@@ -9,7 +9,7 @@ public class FreeBoardDTO {
 	private String content;
 	private String id;
 	private Date postdate;
-	private int vistcount;
+	private int visitcount;
 	
 	
 	public String getNum() {
@@ -42,11 +42,11 @@ public class FreeBoardDTO {
 	public void setPostdate(Date postdate) {
 		this.postdate = postdate;
 	}
-	public int getVistcount() {
-		return vistcount;
+	public int getVisitcount() {
+		return visitcount;
 	}
-	public void setVistcount(int vistcount) {
-		this.vistcount = vistcount;
+	public void setVisitcount(int visitcount) {
+		this.visitcount = visitcount;
 	}
 	
 	

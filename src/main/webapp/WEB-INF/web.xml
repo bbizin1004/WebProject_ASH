@@ -27,6 +27,18 @@
 		<param-value>1234</param-value>
 	</context-param>
 
+
+	<servlet>
+		<servlet-name>index</servlet-name>
+		<servlet-class>servlet.Index</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>index</servlet-name>
+		<url-pattern>/index.do</url-pattern>
+	</servlet-mapping>
+
+
+
 	<!-- 회원가입 -->
 	<servlet>
 		<servlet-name>register</servlet-name>
@@ -66,26 +78,34 @@
 		<url-pattern>/pages/member/MemberEdit.do</url-pattern>
 	</servlet-mapping>
 
-	<!-- 자유게시판 -->
+	<!-- 자유게시판- 리스트 -->
 	<servlet>
 		<servlet-name>freeBoard</servlet-name>
-		<servlet-class>servlet.freeboard</servlet-class>
+		<servlet-class>freeboard.ListController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>freeBoard</servlet-name>
-		<url-pattern>/pages/board/freeBoard.do</url-pattern>
+		<url-pattern>/pages/freeboard/freeBoard.do</url-pattern>
 	</servlet-mapping>
 
+	<!-- 자유게시판 -쓰기 -->
+	<servlet>
+		<servlet-name>freeBoardWrite</servlet-name>
+		<servlet-class>freeboard.WriteController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>freeBoardWrite</servlet-name>
+		<url-pattern>/pages/freeboard/write.do</url-pattern>
+	</servlet-mapping>
 
-
-
+	<!-- 페이징 갯수 -->
 	<context-param>
 		<param-name>POSTS_PER_PAGE</param-name>
 		<param-value>10</param-value>
 	</context-param>
 	<context-param>
 		<param-name>PAGES_PER_BLOCK</param-name>
-		<param-value>5</param-value>
+		<param-value>10</param-value>
 	</context-param>
 
 

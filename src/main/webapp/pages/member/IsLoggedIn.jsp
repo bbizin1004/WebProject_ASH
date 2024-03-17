@@ -9,7 +9,7 @@
 */
 if (session.getAttribute("id") == null) {
     JSFunction.alertLocation("로그인 후 이용해주십시오.",
-                             "./login.jsp", out);
+                             "/WebProject_ASH/pages/member/login.do", out);
 	//JSP의 실행을 종료한다. 
     return;
 }
