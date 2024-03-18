@@ -150,7 +150,7 @@ public class FreeboardDAO extends DBConnPool {
         int result = 0;
         try {
             String query = "UPDATE freeboard"
-            	+ " SET title=? content=? "
+            	+ " SET title=? , content=? "
             	+ " WHERE num=? ";
             
             // 쿼리문의 인파라미터 설정 

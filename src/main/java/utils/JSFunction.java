@@ -71,7 +71,6 @@ public class JSFunction {
 	public static void loginCheck( HttpServletRequest req, HttpServletResponse resp ) {
 				
 		HttpSession session = req.getSession();
-		
 		if (session.getAttribute("id") == null) {
 			JSFunction.alertLocation(resp, "로그인 후 이용해주십시오.",
 				req.getContextPath()+"/pages/member/login.do");

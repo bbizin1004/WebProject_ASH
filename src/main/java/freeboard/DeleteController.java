@@ -17,7 +17,8 @@ public class DeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
 		
 		JSFunction.loginCheck(req, resp);
 		
@@ -31,7 +32,7 @@ public class DeleteController extends HttpServlet {
         
         HttpSession session = req.getSession();
         String sessionId = (String)session.getAttribute("id");
-        
+
         //아이디와 작성자가 본인인지 확인
         if (sessionId.equals(dto.getId())) { 
             int result = dao.deletePost(num);

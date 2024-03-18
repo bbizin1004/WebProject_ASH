@@ -32,13 +32,16 @@
 	}
 </script>
 
-
 </head>
 <body>
 	<div class="container-scroller">
+		<!-- partial:../../partials/_sidebar.html -->
 		<%@ include file="/partials/sidebar.jsp"%>
+		<!-- partial -->
 		<div class="container-fluid page-body-wrapper">
+			<!-- partial:../../partials/_navbar.html -->
 			<%@ include file="/partials/navbar.jsp"%>
+			<!-- partial -->
 			<div class="main-panel">
 				<div class="content-wrapper">
 					<div class="page-header">
@@ -57,11 +60,7 @@
 							<div class="card">
 								<div class="card-body">
 									<h2>자유게시판 - 상세 보기(View)</h2>
-
 									<form name="writeFrm">
-										<!-- 게시물의 일련번호를 서버로 전송하기 위해 hidden타입의 입력상자가 반드시
-											필요하다. 이 부분이 추가되지 않으면 게시물은 수정되지 않는다. -->
-										<input type='hidden' name='num' value='${ param.num }'>
 										<table border="1" width="90%">
 											<colgroup>
 												<col width="15%" />
@@ -94,7 +93,7 @@
 											<tr>
 												<td colspan="4" align="center">
 													<button type="button" class="btn btn-primary mr-2"
-														onclick="location.href='./edit.do?num=${ param.num }';">
+														onclick="location.href='./edit.do?num=${dto.num}';">
 														수정하기</button>
 													<button type="button" class="btn btn-danger mr-2"
 														onclick="deletePost();">삭제하기</button>
@@ -130,6 +129,28 @@
 				</footer>
 			</div>
 		</div>
+		<!-- page-body-wrapper ends -->
 	</div>
+	<!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="../../assets/vendors/select2/select2.min.js"></script>
+    <script src="../../assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/hoverable-collapse.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+    <script src="../../assets/js/settings.js"></script>
+    <script src="../../assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="../../assets/js/file-upload.js"></script>
+    <script src="../../assets/js/typeahead.js"></script>
+    <script src="../../assets/js/select2.js"></script>
+    <!-- End custom js for this page -->
+	
 </body>
 </html>

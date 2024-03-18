@@ -20,13 +20,26 @@ public class EditController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-    	//로그인 검증
+    	
+    	//로그인 검증이 안된다.(오류)
     	JSFunction.loginCheck(req, resp);
+    	
     	
         //일련번호에 해당하는 레코드를 읽어와서 DTO에 저장한다. 
     	String num = req.getParameter("num");
+    	
         FreeboardDAO dao = new FreeboardDAO();
         FreeBoardDTO dto = dao.selectView(num);
+        
+    	HttpSession session = req.getSession();
+    	String id = (String)session.getAttribute("id");
+    	System.out.println("id="+id);
+    	System.out.println("dto.getId()="+dto.getId());
+    	
+    	if(!id.equals(dto.getId())) {
+    		JSFunction.alertBack(resp, "작성자 본인만 수정할 수 있습니다.");
+    	}
+        
         //DTO를 리퀘스트 영역에 저장한 후 포워드한다. 
         req.setAttribute("dto", dto);
         req.getRequestDispatcher("./Edit.jsp").forward(req, resp);
@@ -39,6 +52,7 @@ public class EditController extends HttpServlet{
         throws ServletException, IOException {
     	
     	JSFunction.loginCheck(req, resp);
+    	
 
         
         //폼값정리 : hidden상자에 저장된 내용 
@@ -49,10 +63,11 @@ public class EditController extends HttpServlet{
 
         //위 모든 값을 DTO에 저장한다. 
         FreeBoardDTO dto = new FreeBoardDTO();
+        
         dto.setNum(num);
         dto.setTitle(title);
         dto.setContent(content);
-               
+        
         
         //DAO 인스턴스 생성
         FreeboardDAO dao = new FreeboardDAO();
@@ -61,11 +76,11 @@ public class EditController extends HttpServlet{
         dao.close();
 
         if (result == 1) { 
-            resp.sendRedirect("../mvcboard/view.do?idx=" + num);
+            resp.sendRedirect("../freeboard/view.do?num=" + num);
         }
         else {  
-            JSFunction.alertLocation(resp, "비밀번호 검증을 다시 진행해주세요.",
-                "../mvcboard/view.do?num=" + num);
+            JSFunction.alertLocation(resp, "수정에 실패했습니다.",
+                "../freeboard/view.do?num=" + num);
         }
     }
 	
