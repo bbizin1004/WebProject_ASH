@@ -3,6 +3,7 @@ package utils;
 import java.io.PrintWriter;
 import java.net.http.HttpRequest;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.jsp.JspWriter;
@@ -67,11 +68,14 @@ public class JSFunction {
     }
 
 	// 로그인 검증
-//	public static void loginCheck(HttpRequest req) {
-//				
-//		HttpSession session=req.getSession();
-//		if (req.get("id") == null) {
-//		}
-//	}
+	public static void loginCheck( HttpServletRequest req, HttpServletResponse resp ) {
+				
+		HttpSession session = req.getSession();
+		
+		if (session.getAttribute("id") == null) {
+			JSFunction.alertLocation(resp, "로그인 후 이용해주십시오.",
+				req.getContextPath()+"/pages/member/login.do");
+		}
+	}
     
 }

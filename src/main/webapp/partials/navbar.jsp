@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
 <nav class="navbar p-0 fixed-top d-flex flex-row">
   <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
     <a class="navbar-brand brand-logo-mini" href="/WebProject_ASH/index.do"><img src="/WebProject_ASH/assets/images/logo-mini.svg" alt="logo" /></a>
@@ -155,7 +154,7 @@
       <li class="nav-item dropdown">
         <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
           <div class="navbar-profile">
-            <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
+            <img class="img-xs rounded-circle" src="/WebProject_ASH/assets/images/faces/face15.jpg" alt="">
             <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
             <i class="mdi mdi-menu-down d-none d-sm-block"></i>
           </div>

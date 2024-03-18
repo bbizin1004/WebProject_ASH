@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Vector;
 
 import common.DBConnPool;
+import jakarta.servlet.http.HttpSession;
 
 public class FreeboardDAO extends DBConnPool {
 	
@@ -82,9 +83,8 @@ public class FreeboardDAO extends DBConnPool {
 	public int insertWrite(FreeBoardDTO dto) {
         int result = 0;
         try {
-        	/* 쿼리문의 일련번호는 모델1 게시판에서 생성한 시퀀스를 그대로
-        	사용한다. 나머지 값들은 컨트롤러(서블릿)에서 받은 후 모델(DAO)로
-        	전달한다. */
+        	
+        	
             String query = "INSERT INTO freeboard ( "
 				 + " num, title, content, id,visitcount) "
 				 + " VALUES ( "
@@ -143,6 +143,49 @@ public class FreeboardDAO extends DBConnPool {
             e.printStackTrace();
         }
     }
+    
+    
+    //게시물 수정
+    public int updatePost(FreeBoardDTO dto) {
+        int result = 0;
+        try {
+            String query = "UPDATE freeboard"
+            	+ " SET title=? content=? "
+            	+ " WHERE num=? ";
+            
+            // 쿼리문의 인파라미터 설정 
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, dto.getTitle());
+            psmt.setString(2, dto.getContent());
+            psmt.setString(3, dto.getNum());
+
+            // 쿼리문 실행
+            result = psmt.executeUpdate();
+        }
+        catch (Exception e) {
+            System.out.println("게시물 수정 중 예외 발생");
+            e.printStackTrace();
+        }
+        return result;
+    }
+    
+    
+    //게시물 삭제 
+    public int deletePost(String num) {
+        int result = 0;
+        try {
+            String query = "DELETE FROM freeboard WHERE num=?";
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, num);
+            result = psmt.executeUpdate();
+        }
+        catch (Exception e) {
+            System.out.println("게시물 삭제 중 예외 발생");
+            e.printStackTrace();
+        }
+        return result;
+    }
+    
     
     
 }

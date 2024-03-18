@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../member/IsLoggedIn.jsp" %>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>자유게시판 글쓰기 페이지</title>
+    <title>자유게시판 수정하기</title>
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../../assets/vendors/select2/select2.min.css">
@@ -41,7 +40,7 @@ function validateForm(form) {  // 필수 항목 입력 확인
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> 자유게시판 - 글쓰기 </h3>
+              <h3 class="page-title"> 자유게시판 - 수정하기 </h3>
               <nav aria-label="breadcrumb">
               </nav>
             </div>
@@ -49,8 +48,8 @@ function validateForm(form) {  // 필수 항목 입력 확인
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">자유게시판 - 글쓰기</h4>
-                    <form name="writeFrm" method="post" action="./write.do" class="forms-sample"
+                    <h4 class="card-title">자유게시판 - 수정하기</h4>
+                    <form name="writeFrm" method="post" action="./edit.do" class="forms-sample"
                     	onsubmit="return validateForm(this);">
                      <div class="form-group">
                      <label for="exampleInputName1">아이디</label>
@@ -58,11 +57,11 @@ function validateForm(form) {  // 필수 항목 입력 확인
                     </div>
                       <div class="form-group">
                         <label for="exampleInputName1">제목</label>
-                        <input type="text" name="title" class="form-control" id="exampleInputName1" placeholder="제목">
+                        <input type="text" name="title" class="form-control" id="exampleInputName1" value="${ dto.title }">
                       </div>
                       <div class="form-group">
                         <label for="exampleTextarea1">내용</label>
-                        <textarea name="content" class="form-control" id="exampleTextarea1" rows="15" placeholder="내용을 입력하세요"></textarea>
+                        <textarea name="content" class="form-control" id="exampleTextarea1" rows="15"> ${ dto.content } </textarea>
                       </div>
                       <button type="submit" class="btn btn-primary mr-2">작성하기</button>
                       <button type="button" class="btn btn-dark" onclick="location.href='./freeBoard.do';">목록으로 돌아가기</button>

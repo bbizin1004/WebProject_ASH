@@ -17,7 +17,8 @@ public class ListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
 
 		FreeboardDAO dao = new FreeboardDAO();
 
@@ -32,8 +33,10 @@ public class ListController extends HttpServlet {
 		int totalCount = dao.selectCount(map);
 
 		ServletContext application = getServletContext();
-		int pageSize = Integer.parseInt(application.getInitParameter("POSTS_PER_PAGE"));
-		int blockPage = Integer.parseInt(application.getInitParameter("PAGES_PER_BLOCK"));
+		int pageSize = 
+				Integer.parseInt(application.getInitParameter("POSTS_PER_PAGE"));
+		int blockPage =
+				Integer.parseInt(application.getInitParameter("PAGES_PER_BLOCK"));
 
 		int pageNum = 1;
 		String pageTemp = req.getParameter("pageNum");
