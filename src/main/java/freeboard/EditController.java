@@ -21,7 +21,7 @@ public class EditController extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
     	
-    	//로그인 검증이 안된다.(오류)
+    	
     	JSFunction.loginCheck(req, resp);
     	
     	
@@ -35,10 +35,17 @@ public class EditController extends HttpServlet{
     	String id = (String)session.getAttribute("id");
     	System.out.println("id="+id);
     	System.out.println("dto.getId()="+dto.getId());
+    	System.out.println(!id.equals(dto.getId()));
     	
     	if(!id.equals(dto.getId())) {
     		JSFunction.alertBack(resp, "작성자 본인만 수정할 수 있습니다.");
+    		System.out.println("실행된다.");
+    		JSFunction.alertLocation(resp, "수정에 실패했습니다.",
+    	                "../freeboard/view.do");
+    		return;
     	}
+    	
+    	
         
         //DTO를 리퀘스트 영역에 저장한 후 포워드한다. 
         req.setAttribute("dto", dto);

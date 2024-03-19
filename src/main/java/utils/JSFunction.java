@@ -43,12 +43,15 @@ public class JSFunction {
 	// 경고후 이동
 	public static void alertLocation(HttpServletResponse resp, String msg, String url) {
 		try {
+			System.out.println("oiiiiiiiiiiiiiiiiiii");
 			resp.setContentType("text/html; charset=UTF-8");
 			PrintWriter writer = resp.getWriter();
 
 			String script = "<script>" + "    alert('" + msg + "');" + "    location.href='" + url + "';" + "</script>";
 			writer.println(script);
+			writer.println("lllllllllllllllllllllll");
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 

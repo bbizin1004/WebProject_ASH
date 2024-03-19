@@ -32,7 +32,9 @@ public class DeleteController extends HttpServlet {
         
         HttpSession session = req.getSession();
         String sessionId = (String)session.getAttribute("id");
-
+        
+        
+        
         //아이디와 작성자가 본인인지 확인
         if (sessionId.equals(dto.getId())) { 
             int result = dao.deletePost(num);

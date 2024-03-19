@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<!-- 서블릿으로 로그인체크가 안되서 임시방편으로 처리  -->
-<%@ include file="../member/IsLoggedIn.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
