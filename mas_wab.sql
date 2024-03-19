@@ -1,0 +1,138 @@
+--------------------------------------------------------
+--  파일이 생성됨 - 화요일-3월-19-2024   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Sequence SEQ_BOARD_NUM
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "MAS"."SEQ_BOARD_NUM"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 13 NOCACHE  NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Table FREEBOARD
+--------------------------------------------------------
+
+  CREATE TABLE "MAS"."FREEBOARD" 
+   (	"NUM" NUMBER, 
+	"TITLE" VARCHAR2(200 BYTE), 
+	"CONTENT" VARCHAR2(2000 BYTE), 
+	"ID" VARCHAR2(15 BYTE), 
+	"POSTDATE" DATE DEFAULT sysdate, 
+	"VISITCOUNT" NUMBER(6,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MEMBER
+--------------------------------------------------------
+
+  CREATE TABLE "MAS"."MEMBER" 
+   (	"ID" VARCHAR2(10 BYTE), 
+	"PASS" VARCHAR2(15 BYTE), 
+	"NAME" VARCHAR2(10 BYTE), 
+	"TEL" VARCHAR2(14 BYTE), 
+	"EMAIL" VARCHAR2(40 BYTE), 
+	"REGIDATE" DATE DEFAULT sysdate
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into MAS.FREEBOARD
+SET DEFINE OFF;
+Insert into MAS.FREEBOARD (NUM,TITLE,CONTENT,ID,POSTDATE,VISITCOUNT) values (3,'제목 1입니다.','내용1입니다','mas',to_date('24/03/15','RR/MM/DD'),1);
+Insert into MAS.FREEBOARD (NUM,TITLE,CONTENT,ID,POSTDATE,VISITCOUNT) values (5,'제목2입니다','내용2입니다','bbizin',to_date('24/03/15','RR/MM/DD'),19);
+Insert into MAS.FREEBOARD (NUM,TITLE,CONTENT,ID,POSTDATE,VISITCOUNT) values (7,'이제는 좀 되라','위ㅏㅁㅇ너하ㅣㅁㅇ너하ㅣ','mas',to_date('24/03/18','RR/MM/DD'),0);
+Insert into MAS.FREEBOARD (NUM,TITLE,CONTENT,ID,POSTDATE,VISITCOUNT) values (8,'adafga','agdgbxcv','mas',to_date('24/03/18','RR/MM/DD'),12);
+Insert into MAS.FREEBOARD (NUM,TITLE,CONTENT,ID,POSTDATE,VISITCOUNT) values (10,'지금 쓴거입니다.','우하하','mas',to_date('24/03/18','RR/MM/DD'),6);
+REM INSERTING into MAS.MEMBER
+SET DEFINE OFF;
+Insert into MAS.MEMBER (ID,PASS,NAME,TEL,EMAIL,REGIDATE) values ('bbizin','1234','안성현','0103435625','bbizin@korea.com',to_date('24/03/14','RR/MM/DD'));
+Insert into MAS.MEMBER (ID,PASS,NAME,TEL,EMAIL,REGIDATE) values ('agdasdg','asgqwegt','dfgadfg','asdfgbdsfg','bbizin1004@korea.com',to_date('24/03/14','RR/MM/DD'));
+Insert into MAS.MEMBER (ID,PASS,NAME,TEL,EMAIL,REGIDATE) values ('adgasdg','adsgasdgb','asdgasdg','asgdasdg','bbizin1004@korea.com',to_date('24/03/14','RR/MM/DD'));
+Insert into MAS.MEMBER (ID,PASS,NAME,TEL,EMAIL,REGIDATE) values ('asfddgd','gasdg','asdgasdg','aagdas','bbizin1004@korea.com',to_date('24/03/14','RR/MM/DD'));
+Insert into MAS.MEMBER (ID,PASS,NAME,TEL,EMAIL,REGIDATE) values ('asdgas','adgasdg','cxzbxcb','zcvbzx','bbizin1004@korea.com',to_date('24/03/14','RR/MM/DD'));
+Insert into MAS.MEMBER (ID,PASS,NAME,TEL,EMAIL,REGIDATE) values ('sdfraeqts','zzdbvx','dzbzdxc','zxcbvzads','bbizin1004@korea.com',to_date('24/03/14','RR/MM/DD'));
+Insert into MAS.MEMBER (ID,PASS,NAME,TEL,EMAIL,REGIDATE) values ('izmccnb','qqwre','안성현','fsVz','bbizin1004@korea.com',to_date('24/03/14','RR/MM/DD'));
+Insert into MAS.MEMBER (ID,PASS,NAME,TEL,EMAIL,REGIDATE) values ('bbasdkljg','adgfagd','adga','1323t5','bbizinh1004@namev.com',to_date('24/03/15','RR/MM/DD'));
+Insert into MAS.MEMBER (ID,PASS,NAME,TEL,EMAIL,REGIDATE) values ('mas','1234','안성현','01033110789','bbizin1004@korea.com',to_date('24/03/14','RR/MM/DD'));
+--------------------------------------------------------
+--  DDL for Index SYS_C008473
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "MAS"."SYS_C008473" ON "MAS"."MEMBER" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008484
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "MAS"."SYS_C008484" ON "MAS"."FREEBOARD" ("NUM") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008484
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "MAS"."SYS_C008484" ON "MAS"."FREEBOARD" ("NUM") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008473
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "MAS"."SYS_C008473" ON "MAS"."MEMBER" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table FREEBOARD
+--------------------------------------------------------
+
+  ALTER TABLE "MAS"."FREEBOARD" MODIFY ("TITLE" NOT NULL ENABLE);
+  ALTER TABLE "MAS"."FREEBOARD" MODIFY ("CONTENT" NOT NULL ENABLE);
+  ALTER TABLE "MAS"."FREEBOARD" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "MAS"."FREEBOARD" MODIFY ("POSTDATE" NOT NULL ENABLE);
+  ALTER TABLE "MAS"."FREEBOARD" ADD PRIMARY KEY ("NUM")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MEMBER
+--------------------------------------------------------
+
+  ALTER TABLE "MAS"."MEMBER" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "MAS"."MEMBER" MODIFY ("PASS" NOT NULL ENABLE);
+  ALTER TABLE "MAS"."MEMBER" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "MAS"."MEMBER" MODIFY ("TEL" NOT NULL ENABLE);
+  ALTER TABLE "MAS"."MEMBER" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "MAS"."MEMBER" MODIFY ("REGIDATE" NOT NULL ENABLE);
+  ALTER TABLE "MAS"."MEMBER" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table FREEBOARD
+--------------------------------------------------------
+
+  ALTER TABLE "MAS"."FREEBOARD" ADD CONSTRAINT "FREEBOARD_MEM_FK" FOREIGN KEY ("ID")
+	  REFERENCES "MAS"."MEMBER" ("ID") ENABLE;

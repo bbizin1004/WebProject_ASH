@@ -49,7 +49,7 @@ public class JSFunction {
 
 			String script = "<script>" + "    alert('" + msg + "');" + "    location.href='" + url + "';" + "</script>";
 			writer.println(script);
-			writer.println("lllllllllllllllllllllll");
+			///writer.println("lllllllllllllllllllllll");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
