@@ -51,13 +51,14 @@ public class MemberEdit extends HttpServlet {
         MemberDAO dao = new MemberDAO();
         int result = dao.updateDTO(dto);
         dao.close();
+        System.out.println(result);
         
         if (result == 1) { 
         	JSFunction.alertLocation(resp, "회원정보를 수정하였습니다.", "./login.do");
         }
         else {  
             JSFunction.alertLocation(resp, "회원 정보 수정에 실패했습니다.",
-                "../../index.jsp");
+                "../../index.do");
         }
         
         

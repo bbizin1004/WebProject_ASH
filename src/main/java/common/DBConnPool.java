@@ -46,7 +46,7 @@ public class DBConnPool {
             얻어온다. 즉 DB연결을 위한 정보를 얻어온다. 
             */
             DataSource source = 
-            		(DataSource)ctx.lookup("dbcp_myoracle99");
+            		(DataSource)ctx.lookup("dbcp_myoracle");
             /*
             4.커넥션풀에 생성되어 있는 객체를 가져다가 사용한다.  
             */

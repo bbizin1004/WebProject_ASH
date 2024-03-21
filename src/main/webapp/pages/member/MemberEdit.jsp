@@ -54,10 +54,11 @@
 							<h3 class="card-title text-left mb-3">회원가입</h3>
 							<!-- 회원가입 폼 -->
 							<form method="post" action="MemberEdit.do"
-									onsubmit="return validateForm(this);">
+									onsubmit="return val	idateForm(this);">
 								<div class="form-group">
 									<label>아이디</label> 
 									<p>${ dto.id }</p>
+									<input type="hidden" name="id" value="${ dto.id }" >
 								</div>
 								<div class="form-group">
 									<label>비밀번호</label> <input type="password"
