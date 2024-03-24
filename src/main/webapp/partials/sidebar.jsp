@@ -87,10 +87,10 @@
                  		href="/WebProject_ASH/pages/freeboard/freeBoard.do">자유게시판</a></li>
                 <li class="nav-item">
                  	<a class="nav-link" 
-                 		href="/WebProject_ASH/pages/board/qnaBoard.do">Q&A 게시판</a></li>
+                 		href="/WebProject_ASH/pages/qnaboard/list.do">Q&A 게시판</a></li>
                 <li class="nav-item"> 
                 	<a class="nav-link" 
-                		href="/WebProject_ASH/pages/board/fileBoard.do">자료실 게시판</a></li>
+                		href="/WebProject_ASH/pages/fileboard/list.do">자료실 게시판</a></li>
               </ul>
             </div>
           </li>

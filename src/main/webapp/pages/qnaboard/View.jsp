@@ -45,11 +45,11 @@
 			<div class="main-panel">
 				<div class="content-wrapper">
 					<div class="page-header">
-						<h3 class="page-title">자유게시판</h3>
+						<h3 class="page-title">Q&A게시판</h3>
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="#">상세보기</a></li>
-								<li class="breadcrumb-item active" aria-current="page">자유게시판
+								<li class="breadcrumb-item active" aria-current="page">Q&A게시판
 								</li>
 							</ol>
 						</nav>
@@ -59,7 +59,7 @@
 						<div class="col-12 grid-margin">
 							<div class="card">
 								<div class="card-body">
-									<h2>자유게시판 - 상세 보기(View)</h2>
+									<h2>Q&A게시판 - 상세 보기(View)</h2>
 									<form name="writeFrm">
 									<input type="hidden" name="num" value="${dto.num}">
 										<table border="1" width="90%">
@@ -99,7 +99,7 @@
 													<button type="button" class="btn btn-danger mr-2"
 														onclick="deletePost();">삭제하기</button>
 													<button type="button" class="btn btn-secondary mr-2"
-														onclick="location.href='../freeboard/freeBoard.do';">목록
+														onclick="location.href='../qnaboard/qnaboard.do';">목록
 														바로가기</button>
 												</td>
 											</tr>
