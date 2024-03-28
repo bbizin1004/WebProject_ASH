@@ -99,7 +99,7 @@
 													<button type="button" class="btn btn-danger mr-2"
 														onclick="deletePost();">삭제하기</button>
 													<button type="button" class="btn btn-secondary mr-2"
-														onclick="location.href='../qnaboard/qnaboard.do';">목록
+														onclick="location.href='../qnaboard/list.do';">목록
 														바로가기</button>
 												</td>
 											</tr>

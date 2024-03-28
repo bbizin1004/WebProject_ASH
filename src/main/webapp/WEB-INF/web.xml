@@ -127,6 +127,37 @@
 		<servlet-name>qnaBoardView</servlet-name>
 		<url-pattern>/pages/qnaboard/view.do</url-pattern>
 	</servlet-mapping> 
+	
+	<!-- Q&A 게시판 글쓰기 -->
+ 	<servlet>
+	<servlet-name>qnaBoardWrite</servlet-name>
+	<servlet-class>qnaboard.WriteController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>qnaBoardWrite</servlet-name>
+		<url-pattern>/pages/qnaboard/write.do</url-pattern>
+	</servlet-mapping> 
+	
+	<!-- Q&A 게시판 글쓰기 -->
+ 	<servlet>
+	<servlet-name>qnaBoardEdit</servlet-name>
+	<servlet-class>qnaboard.EditController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>qnaBoardEdit</servlet-name>
+		<url-pattern>/pages/qnaboard/edit.do</url-pattern>
+	</servlet-mapping> 
+	
+	<!-- Q&A 게시판 글쓰기 -->
+ 	<servlet>
+	<servlet-name>qnaBoardDelete</servlet-name>
+	<servlet-class>qnaboard.DeleteController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>qnaBoardDelete</servlet-name>
+		<url-pattern>/pages/qnaboard/delete.do</url-pattern>
+	</servlet-mapping> 
+
 
 	<servlet>
 		<servlet-name>MemberAuth</servlet-name>
